@@ -84,6 +84,54 @@
 		</div>
 	</div>
 	<script>
+    var rotateElm = document.getElementById('rotate-box');
+    var mcRotate = new Hammer.Manager(rotateElm);
+    var rotate = new Hammer.Rotate();
+    mcRotate.add(rotate);
+    mcRotate.on("rotate", function(ev) {
+    rotateElm.textContent += ev.type +" ";
+});
+    
+    var pinchElm = document.getElementById('pinch-box');
+    var mcPinch = new Hammer.Manager(pinchElm);
+    var pinch = new Hammer.Pinch();
+    mcPinch.add(pinch);
+    mcPinch.on("pinch", function(ev) {
+    pinchElm.textContent += ev.type +" ";
+});
+    
+    var pressElm = document.getElementById('press-box');
+    var mcPress = new Hammer.Manager(pressElm);
+    var press = new Hammer.Press();
+    mcPress.add(press);
+    mcPress.on("press", function(ev) {
+    pressElm.textContent += ev.type +" ";
+});
+    
+    var panElm = document.getElementById('pan-box');
+    var mcPan = new Hammer.Manager(panElm);
+    var pan = new Hammer.Pan();
+    mcPan.add(pan);
+    mcPan.on("pan", function(ev) {
+    panElm.textContent += ev.type +" ";
+});
+    var tapElm = document.getElementById('tap-box');
+    var mcTap = new Hammer.Manager(tapElm);
+    var tap = new Hammer.Tap();
+    mcTap.add(tap);
+    mcTap.on("tap", function(ev) {
+    tapElm.textContent += ev.type +" ";
+});
+    var swipeElm = document.getElementById('swipe-box');
+    var mcSwipe = new Hammer.Manager(swipeElm);
+    var swipe = new Hammer.Swipe();
+    mcSwipe.add(swipe);
+    mcSwipe.on("swipe", function(ev) {
+    swipeElm.textContent += ev.type +" ";
+});
+    
+    
+    
 	  // your solution here
   </script>
 </body>
